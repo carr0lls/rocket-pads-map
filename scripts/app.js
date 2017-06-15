@@ -132,23 +132,27 @@ var initialize = (function() {
 				contentString += `
 					<div>
 						<a href="${rocket['wikiURL']}" target="_blank">
-							<label>${rocket['name']}</label>
-							<div><img src="${rocket['imageURL']}" alt="${rocket['name']}" width="40px" /></div>
+							${rocket['name']}
 						</a>
+						<div><img src="${rocket['imageURL']}" alt="${rocket['name']}" width="40px" /></div>
 					</div>`;
 			}
 			else {
 				contentString += `
-				<div>
-					<a href="${rocket['wikiURL']}" target="_blank">${rocket['name']}</a>
-				</div>`;
+					<div>
+						<a href="${rocket['wikiURL']}" target="_blank">
+							${rocket['name']}
+						</a>
+					</div>`;
 			}
 		});
 
 		infoWindow = new google.maps.InfoWindow({
 			content: `
 				<div>
-					<a href="${padInfo['wikiURL']}" target="_blank"><h2>${padInfo['name']}</h2></a>
+					<div>
+						<a href="${padInfo['wikiURL']}" target="_blank"><h2>${padInfo['name']}</h2></a>
+					</div>
 					${contentString}
 				</div>`
 		});
